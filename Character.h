@@ -6,15 +6,23 @@ public:
 	Character();
 	Character(float health, float damage);
 
-	void attack(Character other);
+	void getPlayerName();
+
+
+	void player1turn(Character* other);
+	void player2turn(Character* other);
+
+	void attack(Character* other);
 	float takeDamage(float damageAmount);
 
 	float getDamage() { return m_damage; }
 	float getHealth() { return m_health; }
+	
 
 private:
 
 	float m_health;
 	float m_damage;
+
 };
 

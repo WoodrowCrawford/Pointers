@@ -21,6 +21,7 @@ private:
 private:
 
 	bool m_gameOver; 
-	Character m_player1;
-	Character m_player2;
+	//Makes the characters pointers
+	Character* m_player1;
+	Character* m_player2;
 };
