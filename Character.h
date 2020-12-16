@@ -6,7 +6,6 @@ public:
 	Character();
 	Character(float health, float damage);
 
-	void getPlayerName();
 
 
 	void player1turn(Character* other);
