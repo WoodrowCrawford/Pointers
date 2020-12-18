@@ -13,6 +13,14 @@ Character::Character(float health, float damage)
 	m_damage = damage;
 }
 
+void Character::Intro()
+{
+	std::cout << "Welcome to my trial. In this game, you will face many enemies and will most likely struggle." << std::endl;
+	system("pause");
+	system("cls");
+	std::cout << "There are many floors here, which is why you will be asked to save after every battle. You're welcome." << std::
+}
+
 
 
 
@@ -38,7 +46,6 @@ void Character::player1turn(Character* other)
 			std::cout << "player 1 is dead.";
 			system("pause");
 			delete other;
-			player2Dead();
 		}
 		
 	}
@@ -96,12 +103,6 @@ void Character::player1Dead()
 	std::cout << "Player 1 has been defeated!!!";
 }
 
-
-//This is what happens if player 2 losses
-void Character::player2Dead()
-{
-	std::cout << "Player 2 has been defeated!!!";
-}
 
 void Character::faceEnemies(Character* other)
 {

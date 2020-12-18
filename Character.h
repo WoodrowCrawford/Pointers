@@ -6,12 +6,12 @@ public:
 	Character();
 	Character(float health, float damage);
 
-
+	void Intro();
 
 	void player1turn(Character* other);
 	void player2turn(Character* other);
 	void player1Dead();
-	void player2Dead();
+
 
 	void faceEnemies(Character* other);
 
