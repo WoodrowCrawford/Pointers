@@ -29,7 +29,7 @@ void Character::player1turn(Character* other)
 	if (choice == 1)
 	{
 		other->attack(other);
-		std::cout << "Player 2 has " << other->getHealth() << " Hp" << std::endl;
+		std::cout << "You  attacked and Player 2 has " << other->getHealth() << " Hp" << std::endl;
 		system("pause");
 		system("cls");
 
@@ -38,7 +38,7 @@ void Character::player1turn(Character* other)
 			std::cout << "player 1 is dead.";
 			system("pause");
 			delete other;
-			
+			player2Dead();
 		}
 		
 	}
@@ -47,6 +47,7 @@ void Character::player1turn(Character* other)
 	else if (choice == 2)
 	{
 		std::cout << "Pass test";
+		
 	}
 }
 
@@ -65,15 +66,17 @@ void Character::player2turn(Character* other)
 	if (choice == 1)
 	{
 		other->attack(other);
-		std::cout << "Player 1 has " << other->getHealth() << " Hp" << std::endl;
+		std::cout << "You attacked and Player 1 has " << other->getHealth() << " Hp" << std::endl;
 		system("pause");
 		system("cls");
 
+		//If the other player dies this turn
 		if (other->getHealth() <= 0)
 		{
 			std::cout << "player 1 is dead.";
 			system("pause");
 			delete other;
+			player1Dead();
 			
 		}
 		
@@ -83,7 +86,26 @@ void Character::player2turn(Character* other)
 	else if (choice == 2)
 	{
 		std::cout << "Pass test";
+		
 	}
+}
+
+//This is what happens if player 1 losses
+void Character::player1Dead()
+{
+	std::cout << "Player 1 has been defeated!!!";
+}
+
+
+//This is what happens if player 2 losses
+void Character::player2Dead()
+{
+	std::cout << "Player 2 has been defeated!!!";
+}
+
+void Character::faceEnemies(Character* other)
+{
+	
 }
 
 

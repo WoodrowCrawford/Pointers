@@ -10,6 +10,10 @@ public:
 
 	void player1turn(Character* other);
 	void player2turn(Character* other);
+	void player1Dead();
+	void player2Dead();
+
+	void faceEnemies(Character* other);
 
 	void attack(Character* other);
 	float takeDamage(float damageAmount);
