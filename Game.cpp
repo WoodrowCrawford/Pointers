@@ -21,7 +21,6 @@ void game::start()
 {
 	m_player1 = new Character(15, 5);
 	m_player2 = new Character(15, 5);
-	m_player1->Intro();
 
 
 }
