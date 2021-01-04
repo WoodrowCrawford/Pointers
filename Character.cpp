@@ -13,6 +13,14 @@ Character::Character(float health, float damage)
 	m_damage = damage;
 }
 
+void Character::Intro()
+{
+	std::cout << "Welcome to my trial. In this game, you will face many enemies and will most likely struggle." << std::endl;
+	system("pause");
+	system("cls");
+	std::cout << "There are many floors here, which is why you will be asked to save after every battle. You're welcome." << std::
+}
+
 
 
 
@@ -105,7 +113,20 @@ void Character::player2Dead()
 
 void Character::faceEnemies(Character* other)
 {
+	int room = 1;
+
+	switch (room)
+	{
+		case 1:
+		{
+			std::cout << "You enter room 1.";
+		}
 	
+
+	
+	default:
+		break;
+	}
 }
 
 
