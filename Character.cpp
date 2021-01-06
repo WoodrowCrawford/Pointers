@@ -13,16 +13,20 @@ Character::Character(float health, float damage)
 	m_damage = damage;
 }
 
-void Character::Intro()
+
+
+
+
+void Character::LoadSaveDataP1()
 {
-	std::cout << "Welcome to my trial. In this game, you will face many enemies and will most likely struggle." << std::endl;
+	std::cout << "PLAYER 1:" << std::endl;
+	std::cout << "Please select a save data." << std::endl;
+	std::cout << "1. " << std::endl;
+	std::cout << "2. " << std::endl;
+	std::cout << "3. " << std::endl;
 	system("pause");
-	system("cls");
-	std::cout << "There are many floors here, which is why you will be asked to save after every battle. You're welcome." << std::
+	
 }
-
-
-
 
 //Player 1's turn
 void Character::player1turn(Character* other)
