@@ -36,6 +36,7 @@ void Character::SaveDataP2()
 //Load data for player 1. This will run as soon as the game starts.
 void Character::LoadDataP1()
 { 
+	int input;
 	
 	std::fstream file;
 	file.open("SaveDataP1.txt", std::ios::out | std::ios::binary);
@@ -44,13 +45,51 @@ void Character::LoadDataP1()
 	std::cout << "1. " << std::endl;
 	std::cout << "2. " << std::endl;
 	std::cout << "3. " << std::endl;
-	system("pause");
+	std::cout << "4.CONTINUE WITHOUT SAVE DATA";
+	std::cin >> input;
+
+
+	//Save file #1 for P1
+	if (input == 1)
+	{
+		std::cout << "You picked 1." << std::endl;
+		system("pause");
+		system("cls");
+	}
+
+	//Save file #2 for P1
+	else if (input == 2)
+	{
+		std::cout << "You picked 2." << std::endl;
+		system("pause");
+		system("cls");
+	}
+
+	//Save file #3 for P1
+	else if (input == 3)
+	{
+		std::cout << "You picked 3.";
+		system("pause");
+		system("cls");
+	}
+
+	//The player starts the game without a save file
+	else if (input == 4)
+	{
+		std::cout << "You chose to start a new game";
+		system("pause");
+		system("cls");
+	}
+
+
 }
 
 
 //Load data for player 2. This will run as soon as the game starts.
 void Character::LoadDataP2()
 {
+	int input;
+
 	std::fstream file;
 	file.open("SaveDataP2.txt", std::ios::out | std::ios::binary);
 	std::cout << "PLAYER 2:" << std::endl;
@@ -58,7 +97,42 @@ void Character::LoadDataP2()
 	std::cout << "1. " << std::endl;
 	std::cout << "2. " << std::endl;
 	std::cout << "3. " << std::endl;
-	system("pause");
+	std::cout << "4.CONTINUE WITHOUT SAVE DATA";
+	std::cin >> input;
+
+
+	//Save file #1 for P2
+	if (input == 1)
+	{
+		std::cout << "You picked 1." << std::endl;
+		system("pause");
+		system("cls");
+	}
+
+	//Save file #2 for P2
+	else if (input == 2)
+	{
+		std::cout << "You picked 2." << std::endl;
+		system("pause");
+		system("cls");
+	}
+
+	//Save file #3 for P2
+	else if (input == 3)
+	{
+		std::cout << "You picked 3.";
+		system("pause");
+		system("cls");
+	}
+
+
+	//The player starts the game without a save file
+	else if (input == 4)
+	{
+		std::cout << "You chose to start a new game";
+		system("pause");
+		system("cls");
+	}
 
 }
 
@@ -91,13 +165,13 @@ void Character::player1turn(Character* other)
 	//If the player decides to do nothing
 	else if (choice == 2)
 	{
-		std::cout << "Pass test";
-		
+		std::cout << "Pass test ";
 	}
 
 	//If the player wants to save
 	else if (choice == 3)
 	{
+		SaveDataP1();
 		std::cout << "Player 1 is saving...";
 		system("pause");
 		system("cls");
@@ -138,13 +212,14 @@ void Character::player2turn(Character* other)
 	//If the player decides to do nothing
 	else if (choice == 2)
 	{
-		std::cout << "Pass test";
+		std::cout << "Pass test ";
 		
 	}
 
 	//If the player wants to save
 	else if (choice == 3)
 	{
+		SaveDataP2();
 		std::cout << "Player 2 is saving...";
 		system("pause");
 		system("cls");
