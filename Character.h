@@ -6,13 +6,15 @@ public:
 	Character();
 	Character(float health, float damage);
 
-	void LoadSaveDataP1();
+	void SaveDataP1();
+	void SaveDataP2();
+	void LoadDataP1();
+	void LoadDataP2();
 	void player1turn(Character* other);
 	void player2turn(Character* other);
 	void player1Dead();
 
 
-	void faceEnemies(Character* other);
 
 	void attack(Character* other);
 	float takeDamage(float damageAmount);

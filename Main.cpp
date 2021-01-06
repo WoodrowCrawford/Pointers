@@ -2,12 +2,7 @@
 #include <fstream>
 #include "game.h"
 
-void SaveData()
-{
-	std::fstream file;
-	file.open("SaveData.txt", std::ios::in | std::ios::binary);
 
-}
 
 
 int main()

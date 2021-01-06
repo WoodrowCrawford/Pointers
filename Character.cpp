@@ -1,5 +1,6 @@
 #include "Character.h"
 #include <iostream>
+#include <fstream>
 
 Character::Character()
 {
@@ -14,18 +15,51 @@ Character::Character(float health, float damage)
 }
 
 
-
-
-
-void Character::LoadSaveDataP1()
+//Save data for player 1.
+void Character::SaveDataP1()
 {
+	std::fstream file;
+	file.open("SaveDataP1.txt", std::ios::in | std::ios::binary);
+	std::cout << "PLAYER 1:" << std::endl;
+
+}
+
+//Save data for player 2.
+void Character::SaveDataP2()
+{
+	std::fstream file;
+	file.open("SaveDataP2.txt", std::ios::in | std::ios::binary);
+	std::cout << "PLAYER 2:" << std::endl;
+}
+
+
+//Load data for player 1. This will run as soon as the game starts.
+void Character::LoadDataP1()
+{ 
+	
+	std::fstream file;
+	file.open("SaveDataP1.txt", std::ios::out | std::ios::binary);
 	std::cout << "PLAYER 1:" << std::endl;
 	std::cout << "Please select a save data." << std::endl;
 	std::cout << "1. " << std::endl;
 	std::cout << "2. " << std::endl;
 	std::cout << "3. " << std::endl;
 	system("pause");
-	
+}
+
+
+//Load data for player 2. This will run as soon as the game starts.
+void Character::LoadDataP2()
+{
+	std::fstream file;
+	file.open("SaveDataP2.txt", std::ios::out | std::ios::binary);
+	std::cout << "PLAYER 2:" << std::endl;
+	std::cout << "Please select a new save data." << std::endl;
+	std::cout << "1. " << std::endl;
+	std::cout << "2. " << std::endl;
+	std::cout << "3. " << std::endl;
+	system("pause");
+
 }
 
 //Player 1's turn
@@ -34,7 +68,7 @@ void Character::player1turn(Character* other)
 
 	int choice;
 	std::cout << "Player 1 it is your turn" << std::endl;
-	std::cout << "1.Attack" << std::endl; std::cout << "2.Pass";
+	std::cout << "1.Attack" << std::endl; std::cout << "2.Pass" << std::endl; std::cout << "3.Save";
 	std::cin >> choice;
 	
 	//If the player attacks
@@ -60,6 +94,14 @@ void Character::player1turn(Character* other)
 		std::cout << "Pass test";
 		
 	}
+
+	//If the player wants to save
+	else if (choice == 3)
+	{
+		std::cout << "Player 1 is saving...";
+		system("pause");
+		system("cls");
+	}
 }
 
 
@@ -70,7 +112,7 @@ void Character::player2turn(Character* other)
 	
 	int choice;
 	std::cout << "Player 2 it is your turn" << std::endl;
-	std::cout << "1.Attack" << std::endl; std::cout << "2.Pass";
+	std::cout << "1.Attack" << std::endl; std::cout << "2.Pass" << std::endl; std::cout << "3.Save";
 	std::cin >> choice;
 
 	//If the player attacks
@@ -99,6 +141,14 @@ void Character::player2turn(Character* other)
 		std::cout << "Pass test";
 		
 	}
+
+	//If the player wants to save
+	else if (choice == 3)
+	{
+		std::cout << "Player 2 is saving...";
+		system("pause");
+		system("cls");
+	}
 }
 
 //This is what happens if player 1 losses
@@ -108,10 +158,6 @@ void Character::player1Dead()
 }
 
 
-void Character::faceEnemies(Character* other)
-{
-	
-}
 
 
 void Character::attack(Character* other)
