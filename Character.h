@@ -8,8 +8,6 @@ public:
 
 	void SaveDataP1();
 	void SaveDataP2();
-	void LoadDataP1();
-	void LoadDataP2();
 	void player1turn(Character* other);
 	void player2turn(Character* other);
 	void player1Dead();
