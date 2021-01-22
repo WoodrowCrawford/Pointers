@@ -32,7 +32,7 @@ void game::start()
 	//if Player 1 wants to start a game with previous stats
 	if (input == 1)
 	{
-		std::fstream file;
+		std::ifstream file;
 		file.open("SaveDataP1.txt", std::ios::out | std::ios::binary);
 		std::cout << "PLAYER 1:" << std::endl;
 		std::cout << "Save data loaded." << std::endl;
@@ -58,7 +58,7 @@ void game::start()
 	//if Player 2 wants to start a game with previous stats
 	if (input2 == 1)
 	{
-		std::fstream file;
+		std::ifstream file;
 		file.open("SaveDataP2.txt", std::ios::out | std::ios::binary);
 		std::cout << "PLAYER 2:" << std::endl;
 		std::cout << "Save data loaded." << std::endl;
