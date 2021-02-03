@@ -18,11 +18,11 @@ Character::Character(float health, float damage)
 //Save data for player 1.
 void Character::SaveDataP1()
 {
-	
+	Character* P1;
 	std::ofstream file;
-	file.open("SaveDataP1.txt", std::ios::in | std::ios::binary);
+	file.open("SaveDataP1.txt", std::ios::out | std::ios::binary);
 	std::cout << "PLAYER 1:" << std::endl;
-	file << m_health;
+	file.write((char*)&m_health, sizeof(P1));
 	file.close();
 
 }
@@ -30,10 +30,11 @@ void Character::SaveDataP1()
 //Save data for player 2.
 void Character::SaveDataP2()
 {
+	Character* P2;
 	std::ofstream file;
-	file.open("SaveDataP2.txt", std::ios::in | std::ios::binary);
+	file.open("SaveDataP2.txt", std::ios::out | std::ios::binary);
 	std::cout << "PLAYER 2:" << std::endl;
-	file << m_health;
+	file.write((char*)&m_health, sizeof(P2));
 	file.close();
 
 }

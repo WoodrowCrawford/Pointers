@@ -33,7 +33,7 @@ void game::start()
 	if (input == 1)
 	{
 		std::ifstream file;
-		file.open("SaveDataP1.txt", std::ios::out | std::ios::binary);
+		file.open("SaveDataP1.txt", std::ios::in | std::ios::binary);
 		std::cout << "PLAYER 1:" << std::endl;
 		std::cout << "Save data loaded." << std::endl;
 		file.close();
@@ -59,7 +59,7 @@ void game::start()
 	if (input2 == 1)
 	{
 		std::ifstream file;
-		file.open("SaveDataP2.txt", std::ios::out | std::ios::binary);
+		file.open("SaveDataP2.txt", std::ios::in | std::ios::binary);
 		std::cout << "PLAYER 2:" << std::endl;
 		std::cout << "Save data loaded." << std::endl;
 		file.close();
